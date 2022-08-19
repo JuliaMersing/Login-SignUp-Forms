@@ -1,46 +1,89 @@
-# Getting Started with Create React App
+# Login-SignUp form with react, redux and typescript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project contain a login and sigUp form. Is build using:
+- React
+- Redux
+- Typescript
+- Testing Library
+- EsLint
 
-## Available Scripts
+## Set up
 
-In the project directory, you can run:
+Create a new React app with Typescript support:
 
-### `npm start`
+`npx create-react-app login-signUp-form --template typescript`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then cd into the login-signUp-form folder:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`cd login-signUp-form`
 
-### `npm test`
+I’ve seen some cases where the react and react-dom typescript type definitions aren’t automatically installed as part of create react app, resulting an error such as: Could not find a declaration file for module 'react', so to be on the safe side, install them now:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install @types/react @types/react-dom`
 
-### `npm run build`
+Add the Redux Toolkit and React-Redux packages to your project:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm install @reduxjs/toolkit react-redux`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Now, install Tailwind CSS and its related dependencies by running the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm install -D tailwindcss postcss autoprefixer`
 
-### `npm run eject`
+Next, generate some configurational files by running the following command in the root directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`npx tailwindcss init -p`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+That should generate a tailwind.config.js file and postcss.config.js file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Now, go ahead and update the tailwind.config.js file to support templates for your React component files as shown:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![img_1.png](images/tailwindConfig.png)
 
-## Learn More
+Almost there! We'll now add some necessary Tailwind directives to your index.css file present in the root directory:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![img_2.png](images/indexCss.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Each of the above directives represents a layer of Tailwind's utility classes that you can use in your project. Their declaration allows using these utility classes anywhere in your project.
+
+Finally, we'll kickstart your React project by spinning a local development server:
+
+`npm start`
+
+## Frontend Architecture and Boilerplate
+
+Delete all the boilerplate. We'll add everything we need from scratch instead. 
+
+`cd src && rm *` # move to src and delete all files within
+
+We'll make directories for redux, as well as pages, components and utils.
+
+`mkdir redux components pages utils`
+
+And we'll bring back index.tsx, App.tsx and index.css (we copy and paste what we had before).
+
+`touch index.tsx index.css App.tsx`
+
+So at this point your project directory tree looks like this.
+
+![img_3.png](images/projectDirectory.png)
+
+## Setting up the Redux Store
+
+When I first started learning Redux, it seemed so overwhelming because every app I looked at had index and store set up a bit differently.
+After watching several tutorials and trying different ways to do it, this is the one that has worked for me.
+
+Create a file named src/redux/store.tsx. Import the configureStore API from Redux Toolkit. We'll start by creating an empty Redux store, and exporting it:
+
+![img.png](images/store.png)
+
+In index.tsx, we'll be bringing in a few things.
+
+* createStore, to create the store that will maintain the Redux state
+* Provider, to wrap the entire application in Redux
+
+![img.png](images/index.png)
+
+
+
+
+
