@@ -45,6 +45,20 @@ Almost there! We'll now add some necessary Tailwind directives to your index.css
 
 Each of the above directives represents a layer of Tailwind's utility classes that you can use in your project. Their declaration allows using these utility classes anywhere in your project.
 
+Last step, is set up ESLint:
+
+React comes with an eslint configuration pre-setted. Let’s remove it from 'package.json':
+
+![img.png](images/ESlint.png)
+
+Now on the terminal run:
+
+`npm install eslint --save-dev`
+
+and then
+
+`npx eslint --init`
+
 Finally, we'll kickstart your React project by spinning a local development server:
 
 `npm start`
@@ -67,6 +81,8 @@ So at this point your project directory tree looks like this.
 
 ![img_3.png](images/projectDirectory.png)
 
+Now, import a Login form from tailwind in App, and then start to export components that is going to be reused.
+
 ## Setting up the Redux Store
 
 When I first started learning Redux, it seemed so overwhelming because every app I looked at had index and store set up a bit differently.
@@ -82,6 +98,9 @@ In index.tsx, we'll be bringing in a few things.
 * Provider, to wrap the entire application in Redux
 
 ![img.png](images/index.png)
+
+
+## Set up ESLint
 
 
 
