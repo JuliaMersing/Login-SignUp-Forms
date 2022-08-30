@@ -45,9 +45,9 @@ Almost there! We'll now add some necessary Tailwind directives to your index.css
 
 Each of the above directives represents a layer of Tailwind's utility classes that you can use in your project. Their declaration allows using these utility classes anywhere in your project.
 
-Last step, is set up ESLint:
+Last step, is set up ESLint. I must say that making ESLint works can be a very difficult, so I recommend you to read [this article ](https://andrebnassis.medium.com/setting-eslint-on-a-react-typescript-project-2021-1190a43ffba)about the configuration.
 
-React comes with an eslint configuration pre-setted. Let’s remove it from 'package.json':
+React comes with an eslint configuration pre-set. Let’s remove it from 'package.json':
 
 ![img.png](images/ESlint.png)
 
@@ -99,8 +99,6 @@ In index.tsx, we'll be bringing in a few things.
 
 ![img.png](images/index.png)
 
-
-## Set up ESLint
 
 
 
