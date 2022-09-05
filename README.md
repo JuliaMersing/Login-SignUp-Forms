@@ -81,7 +81,8 @@ So at this point your project directory tree looks like this.
 
 ![img_3.png](images/projectDirectory.png)
 
-Now, import a Login form from tailwind in App, and then start to export components that is going to be reused.
+Now, import a Login form from tailwind in App, there is plenty of examples in this page. After that, export those components that are going to be reused.
+I use React and typescript to build them. 
 
 ## Setting up the Redux Store
 
