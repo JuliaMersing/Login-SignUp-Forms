@@ -100,7 +100,16 @@ In index.tsx, we'll be bringing in a few things.
 
 ![img.png](images/index.png)
 
+Now we have to create a slice. 
+Add a new file with the slice you want to create. In that file, import the createSlice API from Redux Toolkit.
 
+Creating a slice requires a string name to identify the slice, an initial state value, and one or more reducer functions to define how the state can be updated. Once a slice is created, we can export the generated Redux action creators and the reducer function for the whole slice.
+
+![img.png](images/slice.png)
+
+Import the sliceReducer in the store
+
+![img.png](images/storeReducer.png)
 
 
 
