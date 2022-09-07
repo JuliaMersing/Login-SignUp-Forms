@@ -93,7 +93,7 @@ Create a file named src/redux/store.tsx. Import the configureStore API from Redu
 
 ![img.png](images/store.png)
 
-In index.tsx, we'll be bringing in a few things.
+In index.tsx we need:
 
 * createStore, to create the store that will maintain the Redux state
 * Provider, to wrap the entire application in Redux

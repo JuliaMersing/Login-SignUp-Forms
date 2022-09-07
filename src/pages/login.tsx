@@ -9,6 +9,7 @@ import { newUser } from '../redux/registerSlice';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [remember, setRemember] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -28,6 +29,11 @@ const Login = () => {
     }));
   };
 
+  const handleRememberChange = (event: any): void => {
+    const { checked } = event.target;
+    setRemember(checked);
+  };
+
   return (
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -39,7 +45,7 @@ const Login = () => {
             <Input label="Password" id="password" type="password" value={password} placeholder="Password" onChange={handlePassword} />
           </div>
           <div className="flex items-center justify-between">
-            <Checkbox />
+            <Checkbox onChange={handleRememberChange} check={remember} />
             <div className="text-sm">
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
