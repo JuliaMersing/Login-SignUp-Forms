@@ -7,13 +7,15 @@ import Button from '../components/Button';
 import { newUser } from '../redux/registerSlice';
 import { verifyEmail, verifyPassword } from '../utils/validations';
 
-const Login = () => {
+const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmedPassword, setConfirmedPassword] = useState('');
   const [remember, setRemember] = useState(true);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const validLogin = passwordError === '' && emailError === '';
+  const [confirmedPasswordError, setConfirmedPasswordError] = useState('');
+  const validLogin = passwordError === '' && emailError === '' && confirmedPasswordError === '';
 
   const dispatch = useDispatch();
 
@@ -23,6 +25,10 @@ const Login = () => {
 
   const handlePassword = (event: any): void => {
     setPassword(event.target.value);
+  };
+
+  const handleConfirmedPassword = (event: any): void => {
+    setConfirmedPassword(event.target.value);
   };
 
   const handleRememberChange = (event: any): void => {
@@ -40,27 +46,32 @@ const Login = () => {
     setPasswordError(error);
   };
 
+  const handleConfirmedPasswordError = (event: any): void => {
+    const error = event.current.target;
+    setConfirmedPasswordError(error);
+  };
+
   const onFormSubmit = (event: any): void => {
     event.preventDefault();
 
     if (!validLogin) {
- alert('Form has some errors');
-  return;
-}
-  dispatch(newUser({
-    email,
-    password,
-  }));
-};
+      alert('Form has some errors');
+      return;
+    }
+    dispatch(newUser({
+      email,
+      password,
+    }));
+  };
 
   return (
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <Header
-          heading="Sign in"
-          paragraph="Dont have an account"
-          href="/signUp"
-          linkParagraph="Sign Up"
+          heading="Sign Up to create an account"
+          paragraph="Already have an account?"
+          href="/"
+          linkParagraph="Login"
         />
         <form
           className="mt-8 space-y-6"
@@ -90,6 +101,16 @@ const Login = () => {
               onBlur={handlePasswordError}
               error={passwordError}
             />
+            <Input
+              label="Password"
+              id="password"
+              type="password"
+              value={confirmedPassword}
+              placeholder="Confirm password"
+              onChange={handleConfirmedPassword}
+              onBlur={handleConfirmedPasswordError}
+              error={confirmedPasswordError}
+            />
           </div>
           <div className="flex items-center justify-between">
             <Checkbox onChange={handleRememberChange} check={remember} />
@@ -105,4 +126,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
