@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useToast } from 'react-native-toast-notifications';
 import Header from '../components/Header';
 import Input from '../components/Input';
 import Checkbox from '../components/Checkbox';
@@ -16,6 +17,8 @@ const Login = () => {
   const validLogin = passwordError === '' && emailError === '';
 
   const dispatch = useDispatch();
+
+  const toast = useToast();
 
   const handleEmail = (event: any): void => {
     setEmail(event.target.value);
@@ -44,7 +47,11 @@ const Login = () => {
     event.preventDefault();
 
     if (!validLogin) {
- alert('Form has some errors');
+      toast.show('Form has errors', {
+        type: 'danger',
+        placement: 'top',
+      });
+
   return;
 }
   dispatch(newUser({
