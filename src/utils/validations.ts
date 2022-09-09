@@ -7,7 +7,7 @@ export const verifyEmail = (email: any): string => {
 
 export const verifyPassword = (password: any): string => {
   const passwordRegex = /(?=.*?[A-Z]).{8,}/;
-  if (!password) return 'Plase, enter a password';
+  if (!password) return 'Please, enter a password';
   if (!passwordRegex.test(password)) return 'Should have minimum 8 characters and 1 upper case';
 
   return ('');
