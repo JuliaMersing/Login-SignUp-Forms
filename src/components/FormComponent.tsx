@@ -60,7 +60,6 @@ const FormComponent = ({ isSignUp }: FormComponentProps) => {
 
   const onFormSubmit = (event: any): void => {
     event.preventDefault();
-    console.log('validLogin', validLogin);
     if (!validLogin) {
       toast.show('Form has errors', {
         type: 'danger',
