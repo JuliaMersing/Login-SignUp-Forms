@@ -9,7 +9,7 @@ const App = () => (
     <ToastProvider>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/singUp" element={<SignUp />} />
+        <Route path="/signUp" element={<SignUp />} />
       </Routes>
     </ToastProvider>
   </BrowserRouter>
