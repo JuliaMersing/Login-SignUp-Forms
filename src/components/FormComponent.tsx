@@ -43,17 +43,17 @@ const FormComponent = ({ isSignUp }: FormComponentProps) => {
     setRemember(checked);
   };
 
-  const handleEmailError = (event: any): void => {
+  const handleEmailOnBlur = (event: any): void => {
     const error = verifyEmail(event.target.value);
     setEmailError(error);
   };
 
-  const handlePasswordError = (event: any): void => {
+  const handlePasswordOnBlur = (event: any): void => {
     const error = verifyPassword(event.target.value);
     setPasswordError(error);
   };
 
-  const handleConfirmedPasswordError = (event: any): void => {
+  const handleConfirmedPasswordOnBlur = (event: any): void => {
     const error = event.current.target;
     setConfirmedPasswordError(error);
   };
@@ -109,7 +109,7 @@ const FormComponent = ({ isSignUp }: FormComponentProps) => {
               value={email}
               placeholder="Email"
               onChange={handleEmail}
-              onBlur={handleEmailError}
+              onBlur={handleEmailOnBlur}
               error={emailError}
             />
             <Input
@@ -119,7 +119,7 @@ const FormComponent = ({ isSignUp }: FormComponentProps) => {
               value={password}
               placeholder="Password"
               onChange={handlePassword}
-              onBlur={handlePasswordError}
+              onBlur={handlePasswordOnBlur}
               error={passwordError}
             />
             { isSignUp
@@ -131,7 +131,7 @@ const FormComponent = ({ isSignUp }: FormComponentProps) => {
               value={confirmedPassword}
               placeholder="Confirm password"
               onChange={handleConfirmedPassword}
-              onBlur={handleConfirmedPasswordError}
+              onBlur={handleConfirmedPasswordOnBlur}
               error={confirmedPasswordError}
             />
 ) }
