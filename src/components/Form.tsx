@@ -8,11 +8,11 @@ import Checkbox from './Checkbox';
 import Header from './Header';
 import Button from './Button';
 
-type FormComponentProps ={
+type FormProps ={
   isSignUp?: boolean;
 }
 
-const FormComponent = ({ isSignUp }: FormComponentProps) => {
+const Form = ({ isSignUp }: FormProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmedPassword, setConfirmedPassword] = useState('');
@@ -74,9 +74,10 @@ const FormComponent = ({ isSignUp }: FormComponentProps) => {
   };
 
   return (
-    <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        { isSignUp
+    <div className="max-w-md mx-auto bg-indigo-100 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8">
+          { isSignUp
         ? (
           <Header
             heading="Sign Up to create an account"
@@ -94,35 +95,35 @@ const FormComponent = ({ isSignUp }: FormComponentProps) => {
               />
 )}
 
-        <form
-          className="mt-8 space-y-6"
-          action="#"
-          method="POST"
-          onSubmit={onFormSubmit}
-        >
-          <input type="hidden" name="remember" value="true" />
-          <div className="rounded-md shadow-sm -space-y-px">
-            <Input
-              label="Email"
-              id="email"
-              type="email"
-              value={email}
-              placeholder="Email"
-              onChange={handleEmail}
-              onBlur={handleEmailOnBlur}
-              error={emailError}
-            />
-            <Input
-              label="Password"
-              id="password"
-              type="password"
-              value={password}
-              placeholder="Password"
-              onChange={handlePassword}
-              onBlur={handlePasswordOnBlur}
-              error={passwordError}
-            />
-            { isSignUp
+          <form
+            className="mt-8 space-y-6"
+            action="#"
+            method="POST"
+            onSubmit={onFormSubmit}
+          >
+            <input type="hidden" name="remember" value="true" />
+            <div className="rounded-md shadow-sm -space-y-px">
+              <Input
+                label="Email"
+                id="email"
+                type="email"
+                value={email}
+                placeholder="Email"
+                onChange={handleEmail}
+                onBlur={handleEmailOnBlur}
+                error={emailError}
+              />
+              <Input
+                label="Password"
+                id="password"
+                type="password"
+                value={password}
+                placeholder="Password"
+                onChange={handlePassword}
+                onBlur={handlePasswordOnBlur}
+                error={passwordError}
+              />
+              { isSignUp
             && (
             <Input
               label="Password"
@@ -135,19 +136,20 @@ const FormComponent = ({ isSignUp }: FormComponentProps) => {
               error={confirmedPasswordError}
             />
 ) }
-          </div>
-          <div className="flex items-center justify-between">
-            <Checkbox onChange={handleRememberChange} check={remember} />
-            <div className="text-sm">
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
             </div>
-          </div>
-          <Button> Sign in </Button>
-        </form>
+            <div className="flex items-center justify-between">
+              <Checkbox onChange={handleRememberChange} check={remember} />
+              <div className="text-sm">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
+              </div>
+            </div>
+            <Button> Sign in </Button>
+          </form>
+        </div>
       </div>
     </div>
   );
 };
 
-export default FormComponent;
+export default Form;

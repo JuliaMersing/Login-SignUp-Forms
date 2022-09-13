@@ -1,6 +1,6 @@
 import React from 'react';
-import FormComponent from '../components/FormComponent';
+import Form from '../components/Form';
 
-const SignUp = () => <FormComponent isSignUp />;
+const SignUp = () => <Form isSignUp />;
 
 export default SignUp;
