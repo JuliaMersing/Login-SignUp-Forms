@@ -28,6 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts docs",
+    "githubpages": "rm -rf build && rm -rf docs && npm run build && mv build docs && git add docs/* && git commit -m \"Publish in GitHub Pages\" && git push",
     "test": "react-scripts test",
     "test:watch": "npm run test -- --watch",
     "eject": "react-scripts eject",
