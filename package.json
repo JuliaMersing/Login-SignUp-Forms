@@ -1,6 +1,7 @@
 
 {
   "name": "login-signup",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -26,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts docs",
     "test": "react-scripts test",
     "test:watch": "npm run test -- --watch",
     "eject": "react-scripts eject",
