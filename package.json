@@ -1,7 +1,5 @@
-
 {
   "name": "login-signup",
-  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,8 +25,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts docs",
-    "githubpages": "rm -rf docs && rm -rf docs && npm run build && mv build docs && git add docs/* && git commit -m \\\"Publish in GitHub Pages\\\" && git push",
     "test": "react-scripts test",
     "test:watch": "npm run test -- --watch",
     "eject": "react-scripts eject",
@@ -71,6 +67,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
+    "gh-pages": "^4.0.0",
     "jest": "^28.1.2",
     "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
