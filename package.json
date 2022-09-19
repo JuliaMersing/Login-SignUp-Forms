@@ -1,6 +1,6 @@
-
 {
   "name": "login-signup",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,7 @@
     "react-native-web": "^0.18.7",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "redux-thunk": "^2.4.1",
     "store": "^2.0.12",
     "tw-elements": "^1.0.0-alpha12",
@@ -26,11 +26,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts docs",
     "test": "react-scripts test",
     "test:watch": "npm run test -- --watch",
     "eject": "react-scripts eject",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "githubpages": "rm -rf docs && rm -rf docs && npm run build && mv build docs && git add docs/* && git commit -m && git push"
   },
   "eslintConfig": {
     "extends": [
@@ -69,6 +70,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
+    "gh-pages": "^4.0.0",
     "jest": "^28.1.2",
     "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
