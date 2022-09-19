@@ -1,18 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { ToastProvider } from 'react-native-toast-notifications';
 import Login from './pages/login';
 import SignUp from './pages/signUp';
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <ToastProvider>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
       </Routes>
     </ToastProvider>
-  </BrowserRouter>
+  </HashRouter>
 
 );
 

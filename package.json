@@ -31,7 +31,7 @@
     "test:watch": "npm run test -- --watch",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts",
-    "githubpages": "rm -rf docs && rm -rf docs && npm run build && mv build docs && git add docs/* && git commit -m && git push"
+    "githubpages": "rm -rf build && rm -rf docs && npm run build && mv build docs && git add docs/* && git commit -m \"Publish in GitHub Pages\" && git push"
   },
   "eslintConfig": {
     "extends": [
