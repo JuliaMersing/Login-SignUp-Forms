@@ -10,7 +10,6 @@ describe('Input component', () => {
     const mockHandleEmailOnBlur = jest.fn();
 
     const utils = render(<Input
-      label="Email"
       id="email"
       type="email"
       value=""
@@ -18,6 +17,7 @@ describe('Input component', () => {
       onChange={mockHandleOnChange}
       onBlur={mockHandleEmailOnBlur}
       error=""
+      className="input"
     />);
     return {
       ...utils,

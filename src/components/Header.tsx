@@ -15,12 +15,12 @@ const Header = ({
 }: HeaderProps) => (
   <div className="mb-10">
     <div className="flex justify-center">
-      <i className="fa-solid fa-mug-hot text-[56px] text-indigo-600 justify-center" />
+      <i className=" fa-solid fa-mug-hot icon" />
     </div>
-    <h2 className="mt-3 text-center text-3xl tracking-tight font-bold text-gray-900">{heading}</h2>
-    <p className="mt-2 text-center text-sm text-gray-600">
+    <h2 className="heading">{heading}</h2>
+    <p className="paragraphs-header">
       {paragraph}
-      <a href={href} className="font-medium text-indigo-600 hover:text-indigo-500 ml-2">
+      <a href={href} className="link">
         {linkParagraph}
       </a>
     </p>
