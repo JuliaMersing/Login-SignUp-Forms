@@ -33,13 +33,6 @@
     "lint": "eslint . --ext .ts",
     "githubpages": "rm -rf build && rm -rf docs && npm run build && mv build docs && git add docs/* && git commit -m \"Publish in GitHub Pages\" && git push"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:@typescript-eslint/recommended"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -75,58 +68,5 @@
     "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
     "tailwindcss": "^3.1.4"
-  },
-  "rules": {
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error"
-    ],
-    "react/jsx-filename-extension": [
-      "warn",
-      {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".tsx",
-          ".ts"
-        ]
-      }
-    ],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "settings": {
-      "import/resolver": {
-        "typescript": {}
-      }
-    },
-    "no-shadow": "off",
-    "@typescript-eslint/no-shadow": [
-      "error"
-    ],
-    "@typescript-eslint/explicit-function-return-type": [
-      "error",
-      {
-        "allowExpressions": true
-      }
-    ],
-    "max-len": [
-      "warn",
-      {
-        "code": 80
-      }
-    ],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "import/prefer-default-export": "off",
-    "react/prop-types": "off"
-  },
-  "plugins": [
-    "react-hooks"
-  ]
+  }
 }

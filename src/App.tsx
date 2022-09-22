@@ -4,7 +4,7 @@ import { ToastProvider } from 'react-native-toast-notifications';
 import Login from './pages/login';
 import SignUp from './pages/signUp';
 
-const App = () => (
+const App: React.FunctionComponent = () => (
   <HashRouter>
     <ToastProvider>
       <Routes>

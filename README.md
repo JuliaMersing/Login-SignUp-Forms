@@ -111,7 +111,9 @@ Import the sliceReducer in the store
 
 ![img.png](images/storeReducer.png)
 
-The rest of the project use React and testing library for test.
+Using inspect with Redux, you can see that email and password are store correcly
+
+![img.png](images/reduxInspector.png)
 
 I will continue adding others feature and explaining here when necessary.
 

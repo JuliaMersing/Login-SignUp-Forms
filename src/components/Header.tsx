@@ -7,7 +7,7 @@ type HeaderProps = {
   linkParagraph: string
 }
 
-const Header = ({
+const Header : React.FunctionComponent <HeaderProps> = ({
     heading,
     paragraph,
     href,

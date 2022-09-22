@@ -5,7 +5,7 @@ type CheckboxProps = {
   check: boolean,
 }
 
-const Checkbox = ({
+const Checkbox : React.FunctionComponent <CheckboxProps> = ({
     onChange,
     check,
 }: CheckboxProps) => (

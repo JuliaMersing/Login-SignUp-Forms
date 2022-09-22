@@ -8,11 +8,12 @@ import Checkbox from './Checkbox';
 import Header from './Header';
 import Button from './Button';
 
-type FormProps ={
+type FormProps = {
+  // eslint-disable-next-line react/no-unused-prop-types
   isSignUp?: boolean;
 }
 
-const Form = ({ isSignUp }: FormProps) => {
+const Form : React.FunctionComponent <FormProps> = (isSignUp : FormProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmedPassword, setConfirmedPassword] = useState('');
@@ -76,7 +77,7 @@ const Form = ({ isSignUp }: FormProps) => {
   return (
     <div className="container-form">
       <div className="container-header">
-        { isSignUp
+        { isSignUp === false
         ? (
           <Header
             heading="Sign Up to create an account"
@@ -122,7 +123,7 @@ const Form = ({ isSignUp }: FormProps) => {
               error={passwordError}
               className={passwordError ? 'input-error' : 'input'}
             />
-            { isSignUp
+            { isSignUp === true
             && (
             <Input
               id="password"

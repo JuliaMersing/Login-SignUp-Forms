@@ -11,7 +11,7 @@ type InputProps = {
   className: string
 }
 
-const Input = ({
+const Input : React.FunctionComponent <InputProps> = ({
                  value,
                  onChange,
                  onBlur,

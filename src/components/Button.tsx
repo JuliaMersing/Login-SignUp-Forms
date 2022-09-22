@@ -4,7 +4,7 @@ type ButtonProps = {
 children: string,
 }
 
-const Button = ({
+const Button : React.FunctionComponent <ButtonProps> = ({
     children,
                 }: ButtonProps) => (
                   <div>
