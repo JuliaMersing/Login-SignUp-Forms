@@ -4,18 +4,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.2",
-    "@testing-library/react": "^13.2.0",
+    "@reduxjs/toolkit": "^1.8.5",
+    "@tsconfig/create-react-app": "^1.0.2",
+    "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^27.5.1",
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "@types/react-redux": "^7.1.24",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "react-native-toast-notifications": "^3.3.1",
-    "react-native-web": "^0.18.7",
-    "react-redux": "^8.0.2",
+    "react-native-web": "^0.18.9",
+    "react-redux": "^8.0.4",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "redux-thunk": "^2.4.1",
@@ -32,6 +33,22 @@
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts",
     "githubpages": "rm -rf build && rm -rf docs && npm run build && mv build docs && git add docs/* && git commit -m \"Publish in GitHub Pages\" && git push"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/index.tsx",
+      "!src/reportWebVitals.ts",
+      "!src/serviceWorker.ts",
+      "!src/serviceWorkerRegistration.ts"
+    ]
   },
   "browserslist": {
     "production": [
@@ -51,6 +68,7 @@
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.2.1",
     "@types/store": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^5.27.0",

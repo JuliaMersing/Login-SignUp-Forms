@@ -1,137 +1,111 @@
 {
-    "env": {
-        "browser": true,
-        "jest": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "react-app/jest",
-        "airbnb"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "react-hooks",
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "@typescript-eslint/explicit-function-return-type)": "off",
-        "react/react-in-jsx-scope": "off",
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": [
-            "error"
-        ],
-        "react/jsx-filename-extension": [
-            "warn",
-            {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".tsx",
-                    ".ts"
-                ]
-            }
-        ],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "ts": "never",
-                "tsx": "never"
-            }
-        ],
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "js": "never",
-                "jsx": "never",
-                "ts": "never",
-                "tsx": "never"
-            }
-        ],
-        "jsx-a11y/label-has-associated-control": ["error", {
-            "required": {
-                "some": ["nesting", "id"]
-            }
-        }],
-        "jsx-a11y/label-has-for": ["error", {
-            "required": {
-                "some": ["nesting", "id"]
-            }
-        }],
-        "indent":"off",
-        "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": ["error"],
-        "react/prop-types": "off",
-        "react/require-default-props": "off",
-        "react/jsx-filename-extension": [
-            1,
-            {
-                "extensions": [
-                    ".js",
-                    ".jsx"
-                ]
-            }
-        ],
-        "no-param-reassign": [
-            1,
-            {
-                "props": true,
-                "ignorePropertyModificationsFor": [
-                    "state"
-                ]
-            }
-        ],
-        "react/function-component-definition": [
-            2,
-            {
-                "namedComponents": "arrow-function",
-                "unnamedComponents": "arrow-function"
-            }
-        ],
-        "no-shadow": "off",
-        "@typescript-eslint/no-shadow": [
-            "error"
-        ],
-        "@typescript-eslint/explicit-function-return-type": [
-            "error",
-            {
-                "allowExpressions": true
-            }
-        ],
-        "max-len": [
-            "warn",
-            {
-                "code": 80
-            }
-        ],
-        "react-hooks/exhaustive-deps": "warn",
-        "import/prefer-default-export": "off"
-    },
-    "settings": {
-        "import/resolver": {
-            "typescript": {},
-            "node": {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".ts",
-                    ".tsx"
-                ]
-            }
-        }
-    }
-}
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "jest", "testing-library"],
+  "rules": {
+    // react -----------------------
+    "react/react-in-jsx-scope": "off",
+    // react-hooks ---------------
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    // https://github.com/typescript-eslint/typescript-eslint/issues/2619
+    "no-unused-vars": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }]
 
+    /* "@typescript-eslint/explicit-function-return-type)": "off",
+		"no-use-before-define": "off",
+		"@typescript-eslint/no-use-before-define": ["error"],
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never",
+				"tsx": "never"
+			}
+		],
+		"import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+		"jsx-a11y/label-has-associated-control": [
+			"error",
+			{
+				"required": {
+					"some": ["nesting", "id"]
+				}
+			}
+		],
+		"jsx-a11y/label-has-for": [
+			"error",
+			{
+				"required": {
+					"some": ["nesting", "id"]
+				}
+			}
+		],
+		"indent": "off",
+		"@typescript-eslint/no-unused-vars": ["error"],
+		"react/prop-types": "off",
+		"react/require-default-props": "off",
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [".js", ".jsx"]
+			}
+		],
+		"no-param-reassign": [
+			1,
+			{
+				"props": true,
+				"ignorePropertyModificationsFor": ["state"]
+			}
+		],
+		"react/function-component-definition": [
+			2,
+			{
+				"namedComponents": "arrow-function",
+				"unnamedComponents": "arrow-function"
+			}
+		],
+		"no-shadow": "off",
+		"@typescript-eslint/no-shadow": ["error"],
+		"@typescript-eslint/explicit-function-return-type": [
+			"error",
+			{
+				"allowExpressions": true
+			}
+		],
+		"max-len": [
+			"warn",
+			{
+				"code": 80
+			}
+		],
+		"import/prefer-default-export": "off" */
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
+}

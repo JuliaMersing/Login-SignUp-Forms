@@ -9,11 +9,10 @@ import Header from './Header';
 import Button from './Button';
 
 type FormProps = {
-  // eslint-disable-next-line react/no-unused-prop-types
   isSignUp?: boolean;
-}
+};
 
-const Form : React.FunctionComponent <FormProps> = (isSignUp : FormProps) => {
+const Form: React.FunctionComponent<FormProps> = ({ isSignUp }: FormProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmedPassword, setConfirmedPassword] = useState('');
@@ -68,80 +67,71 @@ const Form : React.FunctionComponent <FormProps> = (isSignUp : FormProps) => {
       });
       return;
     }
-    dispatch(newUser({
-      email,
-      password,
-    }));
+    dispatch(
+      newUser({
+        email,
+        password,
+      }),
+    );
   };
 
   return (
-    <div className="container-form">
-      <div className="container-header">
-        { isSignUp === false
-        ? (
+    <div className='container-form'>
+      <div className='container-header'>
+        {isSignUp ? (
           <Header
-            heading="Sign Up to create an account"
-            paragraph="Already have an account?"
-            href="/"
-            linkParagraph="Login"
+            heading='Sign Up to create an account'
+            paragraph='Already have an account?'
+            href='/'
+            linkParagraph='Login'
           />
-)
-            : (
-              <Header
-                heading="Login"
-                paragraph="Don't have an account?"
-                href="/signUp"
-                linkParagraph="SignUp"
-              />
-)}
+        ) : (
+          <Header heading='Login' paragraph="Don't have an account?" href='/signUp' linkParagraph='SignUp' />
+        )}
 
-        <form
-          className="mt-8 space-y-6"
-          action="#"
-          method="POST"
-          onSubmit={onFormSubmit}
-        >
-          <input type="hidden" name="remember" value="true" />
-          <div className="rounded-md shadow-sm -space-y-px">
+        <form className='mt-8 space-y-6' action='#' method='POST' onSubmit={onFormSubmit}>
+          <input type='hidden' name='remember' value='true' />
+          <div className='rounded-md shadow-sm -space-y-px'>
             <Input
-              id="email"
-              type="email"
+              id='email'
+              type='email'
               value={email}
-              placeholder="Email"
+              placeholder='Email'
               onChange={handleEmail}
               onBlur={handleEmailOnBlur}
               error={emailError}
               className={passwordError ? 'input-error' : 'input'}
             />
             <Input
-              id="password"
-              type="password"
+              id='password'
+              type='password'
               value={password}
-              placeholder="Password"
+              placeholder='Password'
               onChange={handlePassword}
               onBlur={handlePasswordOnBlur}
               error={passwordError}
               className={passwordError ? 'input-error' : 'input'}
             />
-            { isSignUp === true
-            && (
-            <Input
-              id="password"
-              type="password"
-              value={confirmedPassword}
-              placeholder="Confirm password"
-              onChange={handleConfirmedPassword}
-              onBlur={handleConfirmedPasswordOnBlur}
-              error={confirmedPasswordError}
-              className={passwordError ? 'input-error' : 'input'}
-            />
-) }
+            {isSignUp && (
+              <Input
+                id='password'
+                type='password'
+                value={confirmedPassword}
+                placeholder='Confirm password'
+                onChange={handleConfirmedPassword}
+                onBlur={handleConfirmedPasswordOnBlur}
+                error={confirmedPasswordError}
+                className={passwordError ? 'input-error' : 'input'}
+              />
+            )}
           </div>
-          <div className="container-checkbox">
+          <div className='container-checkbox'>
             <Checkbox onChange={handleRememberChange} check={remember} />
-            <div className="text-sm">
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a href="#" className="container-footer"> Forgot your password? </a>
+            <div className='text-sm'>
+              <a href='#' className='container-footer'>
+                {' '}
+                Forgot your password?{' '}
+              </a>
             </div>
           </div>
           <Button> Sign in </Button>

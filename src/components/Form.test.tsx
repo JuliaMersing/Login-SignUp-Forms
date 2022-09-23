@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Form from './Form';
@@ -27,9 +26,7 @@ describe('Form', () => {
     expect(container).toMatchSnapshot();
   });
   test('should send form and call useDispatch when button is clicked', async () => {
-    const {
-      formButton,
-    } = setUp();
+    const { formButton } = setUp();
 
     await userEvent.click(formButton);
     expect(mockUseDispatch).toHaveBeenCalled();

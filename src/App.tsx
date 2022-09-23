@@ -1,19 +1,15 @@
 import React from 'react';
-import { Routes, Route, HashRouter } from 'react-router-dom';
-import { ToastProvider } from 'react-native-toast-notifications';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/login';
 import SignUp from './pages/signUp';
 
 const App: React.FunctionComponent = () => (
-  <HashRouter>
-    <ToastProvider>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signUp" element={<SignUp />} />
-      </Routes>
-    </ToastProvider>
-  </HashRouter>
-
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Login />} />
+      <Route path='/signUp' element={<SignUp />} />
+    </Routes>
+  </BrowserRouter>
 );
 
 export default App;

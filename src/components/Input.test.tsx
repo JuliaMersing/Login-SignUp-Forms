@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
@@ -9,16 +8,18 @@ describe('Input component', () => {
     const mockHandleOnChange = jest.fn();
     const mockHandleEmailOnBlur = jest.fn();
 
-    const utils = render(<Input
-      id="email"
-      type="email"
-      value=""
-      placeholder="Email"
-      onChange={mockHandleOnChange}
-      onBlur={mockHandleEmailOnBlur}
-      error=""
-      className="input"
-    />);
+    const utils = render(
+      <Input
+        id='email'
+        type='email'
+        value=''
+        placeholder='Email'
+        onChange={mockHandleOnChange}
+        onBlur={mockHandleEmailOnBlur}
+        error=''
+        className='input'
+      />,
+    );
     return {
       ...utils,
       mockHandleEmailOnBlur,
@@ -26,9 +27,7 @@ describe('Input component', () => {
     };
   };
   test('call handleOnChange when user enter an email', async () => {
-    const {
-      mockHandleOnChange,
-    } = setUp();
+    const { mockHandleOnChange } = setUp();
 
     const email = 'test@gmail.com';
     const input = screen.getByRole('textbox', { name: '' });
@@ -38,10 +37,7 @@ describe('Input component', () => {
   });
 
   test('call handleErrorEmail when email is not valid', async () => {
-    const {
-      mockHandleOnChange,
-        mockHandleEmailOnBlur,
-    } = setUp();
+    const { mockHandleOnChange, mockHandleEmailOnBlur } = setUp();
 
     const email = 'test.com';
     const input = screen.getByRole('textbox', { name: '' });
