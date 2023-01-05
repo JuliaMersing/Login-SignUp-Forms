@@ -27,7 +27,7 @@ describe('Checkbox component', () => {
         getByRole,
     } = setUp();
 
-    const remember = await getByRole('checkbox') as HTMLInputElement;
+    const remember = getByRole('checkbox') as HTMLInputElement;
     await userEvent.click(remember);
     expect(mockHandleRememberChange).toHaveBeenCalledTimes(1);
   });
@@ -37,7 +37,7 @@ describe('Checkbox component', () => {
       getByRole,
     } = setUp();
 
-    const remember = await getByRole('checkbox') as HTMLInputElement;
+    const remember = getByRole('checkbox') as HTMLInputElement;
     await userEvent.click(remember);
     expect(remember.checked).toEqual(false);
 

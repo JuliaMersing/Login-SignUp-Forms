@@ -86,8 +86,7 @@ I use React and typescript to build them.
 
 ## Setting up the Redux Store
 
-When I first started learning Redux, it seemed so overwhelming because every app I looked at had index and store set up a bit differently.
-After watching several tutorials and trying different ways to do it, this is the one that has worked for me.
+I research a lot of different apps and the way it configure Redux, and base on what i've seen, I think this is the best solution:
 
 Create a file named src/redux/store.tsx. Import the configureStore API from Redux Toolkit. We'll start by creating an empty Redux store, and exporting it:
 
@@ -117,7 +116,9 @@ Using inspect with Redux, you can see that email and password are store correcly
 
 I will continue adding others feature and explaining here when necessary.
 
+Demo: 
 
+[Screen Recording 2023-01-05 at 16.25.50.mov](..%2F..%2F..%2FDesktop%2FScreen%20Recording%202023-01-05%20at%2016.25.50.mov)
 
 
 

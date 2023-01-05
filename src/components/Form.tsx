@@ -9,11 +9,10 @@ import Header from './Header';
 import Button from './Button';
 
 type FormProps = {
-  // eslint-disable-next-line react/no-unused-prop-types
   isSignUp?: boolean;
 }
 
-const Form : React.FunctionComponent <FormProps> = (isSignUp : FormProps) => {
+const Form : React.FunctionComponent <FormProps> = ({ isSignUp } : FormProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmedPassword, setConfirmedPassword] = useState('');
@@ -55,8 +54,10 @@ const Form : React.FunctionComponent <FormProps> = (isSignUp : FormProps) => {
   };
 
   const handleConfirmedPasswordOnBlur = (event: any): void => {
-    const error = event.current.target;
-    setConfirmedPasswordError(error);
+    const samePassword = event.current.target;
+    const error = 'Password are not the same';
+    if (samePassword === password) setConfirmedPassword('');
+    if (samePassword !== password) setConfirmedPasswordError(error);
   };
 
   const onFormSubmit = (event: any): void => {
@@ -77,7 +78,7 @@ const Form : React.FunctionComponent <FormProps> = (isSignUp : FormProps) => {
   return (
     <div className="container-form">
       <div className="container-header">
-        { isSignUp === false
+        { isSignUp
         ? (
           <Header
             heading="Sign Up to create an account"
@@ -123,7 +124,7 @@ const Form : React.FunctionComponent <FormProps> = (isSignUp : FormProps) => {
               error={passwordError}
               className={passwordError ? 'input-error' : 'input'}
             />
-            { isSignUp === true
+            { isSignUp
             && (
             <Input
               id="password"
