@@ -118,8 +118,6 @@ I will continue adding others feature and explaining here when necessary.
 
 Demo: 
 
-[Screen Recording 2023-01-05 at 16.25.50.mov](..%2F..%2F..%2FDesktop%2FScreen%20Recording%202023-01-05%20at%2016.25.50.mov)
-
-
+![img.png](img.png)
 
 
